@@ -1,0 +1,22 @@
+[2020-03-25 20:52:39] [info] Start Program:
+Path:"C:\\Patrick\\C++\\Lab04-05-1 (V2)\\x64\\Debug\\Lab04-05-1 (V1).exe"
+Arguments:
+Working directory: "C:\\Patrick\\C++\\Lab04-05-1 (V2)\\Lab04-05-1 (V1)\\"
+Modules: Selected: C:\Patrick\C++\Lab04-05-1 (V2)\x64\Debug\Lab04-05-1 (V1).exe Excluded: 
+Sources: Selected: C:\Patrick\C++\Lab04-05-1 (V2)\Lab04-05-1 (V1) Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: binary C:\Users\potri\AppData\Local\Temp\ymkrhg4t.1um 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2020-03-25 20:52:39] [info] Module: C:\Patrick\C++\Lab04-05-1 (V2)\x64\Debug\Lab04-05-1 (V1).exe is selected because it matches selected pattern: C:\Patrick\C++\Lab04-05-1 (V2)\x64\Debug\Lab04-05-1 (V1).exe
+[2020-03-25 20:53:07] [info] ----------------------------------------------------
+[2020-03-25 20:53:07] [info] Coverage binary generated in file: C:\Users\potri\AppData\Local\Temp\ymkrhg4t.1um
+[2020-03-25 20:53:07] [info] ----------------------------------------------------
+[2020-03-25 20:53:07] [error] Your program stop with error code: 1

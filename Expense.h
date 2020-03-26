@@ -10,11 +10,18 @@ using namespace std;
 
 class Expense {
 private:
+	int ID;
 	int day;
 	int sum;
 	char* type;
 
 public:
+	/*
+	Description: Returns the ID of the expense
+	Input: -
+	Output: ID - int, the ID of the expense
+	*/
+	int getID();
 	/*
 	Description: Returns the index of the day
 	Input: -
@@ -33,6 +40,7 @@ public:
 	Output: type - char*, the type
 	*/
 	char* getType();
+	void setID(int newID);
 	/*
 	Description: Sets the index of the day
 	Input: newDay - int, the new day index
@@ -59,12 +67,13 @@ public:
 	Expense();
 	/*
 	Description: The following is a constructor with parameters
-	Input: d - int, the index of the day
+	Input: i - int, the id of the expense
+	       d - int, the index of the day
 		   s - int, the sum
 		   t - char*, the type
 	Output: -
 	*/
-	Expense(int d, int s, char* t);
+	Expense(int i, int d, int s, char* t);
 	/*
 	Description: The following is a copy constructor
 	Input: e - const class, the Expense class object
@@ -88,7 +97,7 @@ public:
 	Input: e - class, the Expense class object
 	Output: -
 	*/
-	bool compare(Expense &e);
+	bool operator==(const Expense &e);
 	/*
 	Description: create a new Expense (equal to a given Expense e)
 	Input: e - class, the Expense class object
