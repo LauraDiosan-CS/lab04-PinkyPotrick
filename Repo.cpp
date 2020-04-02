@@ -10,14 +10,11 @@ Repo::~Repo() {
 }
 
 void Repo::addElem(Expense &e) {
-	//cout << "Adding the element : " << e.toString() << "\n";
 	this->expenses[this->noExpenses++] = e;
-	//cout << "The element added on expense[" << this->noExpenses - 1 << "] = " << e.toString() << "\n";
 }
 
 void Repo::updateElem(int ID, int newDay, int newSum, char* newType) {
 	for (int index = 0; index < noExpenses; index++) {
-		//cout << "ID = " << ID << " element ID = " << expenses[index].getID() << endl;
 		if (ID == expenses[index].getID()) {
 			expenses[index].setDay(newDay);
 			expenses[index].setSum(newSum);
@@ -27,13 +24,12 @@ void Repo::updateElem(int ID, int newDay, int newSum, char* newType) {
 }
 
 void Repo::deleteElem(int ID) {
-	for (int index = 0; index < noExpenses; index++) {
-		Expense element = expenses[index];
-		if (ID == element.getID()) {
-			for (int index2 = index; index2 < noExpenses - 1; index2++)
-				expenses[index2] = expenses[index2 + 1];
-			noExpenses--;
-			index--;
+	for (int index = 0; index < this->noExpenses; index++)
+	{
+		if (this->expenses[index].getID() == ID)
+		{
+			this->expenses[index] = this->expenses[this->noExpenses - 1];
+			this->noExpenses--;
 		}
 	}
 }
@@ -48,4 +44,8 @@ Expense* Repo::getAll() {
 
 int Repo::getSize() {
 	return this->noExpenses;
+}
+
+void Repo::setSize(int newSize) {
+	this->noExpenses = newSize;
 }

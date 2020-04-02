@@ -62,5 +62,11 @@ public:
 	Output: noExpenses - int, the number of elements in the repository
 	*/
 	int getSize();
+	/*
+	Description: Sets the size of the repository
+	Input: newSize - int, the new size of the repository
+	Output: - 
+	*/
+	void setSize(int newSize);
 };
 #endif

@@ -73,25 +73,47 @@ void testService() {
 	service.createElement(2, 27, 600, type2);//e2
 	service.createElement(3, 30, 3500, type1);//e3
 
-
 	assert(service.readRepo().getSize() == 3);
 
 	Expense e1 = service.readRepo().getAll()[0];
 	Expense e2 = service.readRepo().getAll()[1];
 	Expense e3 = service.readRepo().getAll()[2];
-	//cout << "e1 = " << e1.toString() << "\ne2 = " << e2.toString() << "\ne3 = " << e3.toString() << "\n";
 
-	//cout << "Before: e1 = " << e1.toString() << "\n";
 	service.updateElement(1, 27, 600, type2);
-	//cout << "After: e1 = " << e1.toString() << "\n";
 
 	e1 = service.readRepo().getElemFromPos(0);
 	e2 = service.readRepo().getElemFromPos(1);
 
-	//cout << e1.toString() << " and " << e2.toString();
-
 	assert(e1 == e2);
 
 	service.deleteElement(3);
+	assert(service.readRepo().getSize() == 2);
+
+	service.createElement(4, 10, 1000, type1);//e4
+	Expense e4 = service.readRepo().getAll()[2];
+
+	Expense filteredExpenses[1000];
+	int length = 0;
+	service.showExpenses(type2, filteredExpenses, length);
+
+	assert(length == 2);
+	assert(filteredExpenses[1] == e1);
+	assert(filteredExpenses[2] == e2);
+
+	length = 0;
+	service.showExpenses(type1, filteredExpenses, length);
+
+	assert(length == 1);
+	assert(filteredExpenses[1] == e4);
+
+	Expense sortedExpenses[1000];
+	service.sortExpenses(sortedExpenses);
+
+	assert(sortedExpenses[0] == e4);
+	assert(sortedExpenses[1] == e2);
+	assert(sortedExpenses[2] == e1);
+
+	service.filterExpenses(type2);
+
 	assert(service.readRepo().getSize() == 2);
 }
